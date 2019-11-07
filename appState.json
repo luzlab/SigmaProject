@@ -1,0 +1,124 @@
+{
+  "EDITOR_STATE": {
+    "allProjectFiles": {
+      "ca8acdb7-800d-4a83-a924-13179894dbc7": {
+        "id": "ca8acdb7-800d-4a83-a924-13179894dbc7",
+        "parent": null,
+        "name": "SigmaProject",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "a282b6e2-593f-4898-959e-61a709a5772c"
+        ],
+        "isRemovable": false,
+        "filePath": "SigmaProject"
+      },
+      "a282b6e2-593f-4898-959e-61a709a5772c": {
+        "id": "a282b6e2-593f-4898-959e-61a709a5772c",
+        "parent": "ca8acdb7-800d-4a83-a924-13179894dbc7",
+        "name": "lambda.js",
+        "type": "JS_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "SigmaProject/lambda.js",
+        "code": "exports.handler = function(event, context, callback) {\n    \n    callback(null, {\"message\": \"Successfully executed\"});\n}",
+        "config": {
+          "runtime": "nodejs8.10",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": []
+        },
+        "triggers": [
+          {
+            "resourceName": "snsusEast1AWSS3Daya",
+            "config": {}
+          },
+          {
+            "resourceName": "kinesistest",
+            "config": {
+              "StartingPosition": "TRIM_HORIZON",
+              "BatchSize": "100"
+            }
+          }
+        ],
+        "testCases": {
+          "ba7a9e0b-8c87-4a56-b93d-302968c13298": {
+            "id": "ba7a9e0b-8c87-4a56-b93d-302968c13298",
+            "functionId": "a282b6e2-593f-4898-959e-61a709a5772c",
+            "name": "My First Test Case",
+            "event": "{\n    \"key1\": \"value1\",\n    \"key2\": \"value2\",\n    \"key3\": \"value3\"\n}"
+          }
+        }
+      }
+    },
+    "deletedFiles": [],
+    "rootNode": "ca8acdb7-800d-4a83-a924-13179894dbc7",
+    "openFiles": [
+      "a282b6e2-593f-4898-959e-61a709a5772c"
+    ],
+    "currentFileId": "a282b6e2-593f-4898-959e-61a709a5772c",
+    "resources": {
+      "snsusEast1AWSS3Daya": {
+        "name": "snsusEast1AWSS3Daya",
+        "type": "SNS",
+        "config": {
+          "topicMode": 1,
+          "topicName": "AWSS3-Daya",
+          "topicArn": "arn:aws:sns:us-east-1:263248768798:AWSS3-Daya",
+          "topicRegion": "us-east-1",
+          "snsType": 0,
+          "subscriptions": []
+        }
+      },
+      "kinesistest": {
+        "name": "kinesistest",
+        "type": "Kinesis",
+        "config": {
+          "mode": 0,
+          "StreamName": "test",
+          "shards": 1,
+          "region": "us-east-1",
+          "triggerParams": {
+            "StartingPosition": "TRIM_HORIZON",
+            "BatchSize": "100"
+          }
+        }
+      }
+    },
+    "customTemplate": {
+      "dialect": null,
+      "definitions": {}
+    },
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "SIGMA_AWS_ACC_ID",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      }
+    ],
+    "packageJSON": {
+      "dependencies": {}
+    }
+  },
+  "PROJECT_META": {
+    "projectName": "SigmaProject",
+    "projectDescription": "My First Project",
+    "projectVersion": "1.0.0",
+    "projectRegion": "us-east-1",
+    "platform": "AWS",
+    "platformRegions": {},
+    "lastSave": 1573111265379
+  },
+  "VCS_STATE": {
+    "provider": "GitHub",
+    "repo": {
+      "name": "SigmaProject",
+      "url": "https://github.com/luzlab/SigmaProject"
+    }
+  }
+}
